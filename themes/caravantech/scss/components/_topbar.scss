@@ -1,0 +1,72 @@
+.nav {
+  border-top: {
+    color: lighten($topbar-bg-color, 8%);
+    style: solid;
+    width: 1px;
+  }
+
+  .top-bar {
+    padding-right: rem-calc(15);
+    padding-left: rem-calc(15);
+  }
+}
+
+.top-bar {
+  #main-menu {
+    .menu-icon {
+      padding-right: 15px;
+    }
+
+    @media #{$large-up} {
+      display: table;
+      width: 100%;
+
+      & > li {
+        display: table-cell;
+        float: none;
+        text-align: center;
+
+        .menu-icon {
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+
+        a {
+          letter-spacing: 1px;
+        }
+
+        > a {
+          border-right: {
+            color: lighten($topbar-bg-color, 8%);
+            style: solid;
+            width: 1px;
+          }
+          &.active {
+            background-color: $topbar-link-bg-hover;
+          }
+        }
+
+        &.first {
+          > a {
+            border-left: {
+              color: lighten($topbar-bg-color, 8%);
+              style: solid;
+              width: 1px;
+            }
+          }
+        }
+
+        &.has-dropdown > .dropdown {
+          background-color: rgba($secondary-color, 0.95);
+          a {
+            font-size: rem-calc(11);
+            &:hover,
+            &.active {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

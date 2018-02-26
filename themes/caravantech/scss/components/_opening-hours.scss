@@ -1,0 +1,66 @@
+// Opening hours styling
+
+.opening-hours {
+  &__list {
+    @include block-grid(1);
+    li {
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    font: {
+      size: rem-calc(12);
+      weight: 700;
+    }
+    margin-bottom: 0;
+  }
+
+  &__hours-title,
+  &__hours-value {
+    display: inline-block;
+    font: {
+      size: rem-calc(12);
+      weight: 400;
+    }
+  }
+
+  &__hours-value {
+    margin-left: 5px;
+  }
+
+  // Header View
+  &.header-view {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      float: right;
+      text-align: right;
+    }
+
+    h4,
+    .opening-hours__hours-title,
+    .opening-hours__hours-value {
+      color: #ffffff;
+    }
+
+    h3 {
+      color: #ffffff;
+      font: {
+        size: rem-calc(12);
+        weight: 700;
+      }
+    }
+  }
+
+  // Footer View
+  &.footer-view {
+    color: #D3D3D3;
+    float: right;
+    width: 50%;
+
+    h4 {
+      color: #D3D3D3;
+    }
+  }
+}

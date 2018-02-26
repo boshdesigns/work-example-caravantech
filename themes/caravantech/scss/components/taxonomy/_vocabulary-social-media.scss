@@ -1,0 +1,21 @@
+// Social Media Vocabulary
+.vocabulary-social-media {
+  i {
+    width: 40px;
+    color: #fff;
+    font-size: rem-calc(20);
+    text-align: center;
+    &:hover {
+      color: #2b2b2b;
+    }
+  }
+
+
+  &.view-mode-footer {
+    i:hover {
+      @each $icon, $bg in $social-icons {
+        &.fa-#{$icon} { color: $bg; }
+      }
+    }
+  }
+}

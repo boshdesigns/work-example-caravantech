@@ -1,0 +1,15 @@
+.not-front .l-main {
+  &__inner { @include grid-row(); }
+  .l-main-content {
+    @include grid-column(12);
+    &.l-main-content--with-sidebar {
+      @media #{$medium-up} {
+        @include grid-column($columns:9,$push:3);
+      }
+    }
+  }
+  .l-sidebar {
+    @include grid-column(12);
+    @media #{$medium-up} { @include grid-column($columns:3,$pull:9); }
+  }
+}

@@ -1,0 +1,76 @@
+// Telephone Numbers Vocabulary
+.vocabulary-telephone-numbers {
+
+  // Full View Mode
+  &.view-mode-full {
+    .field-name-field-phone {
+      font-size: rem-calc(18);
+      font-weight: bold;
+    }
+  }
+
+  // Header Phone Numbers View Mode
+  &.view-mode-header_phone_numbers {
+    @media #{$small-only} {
+      @include button($padding:rem-calc(8),$bg:darken($primary-color, 8%));
+      margin-bottom: 3px;
+      margin-left: 3px;
+    }
+    .field {
+      @media #{$medium-up} { font-size: rem-calc(16); }
+      &.field-name-field-icon {
+        color: inherit;
+        font-size: rem-calc(22);
+      }
+      &.field-name-field-label {
+        font-size: rem-calc(14);
+        @media #{$small-only} { color: inherit; }
+        @media #{$medium-up} { font-size: rem-calc(16); }
+      }
+      &.field-name-field-phone {
+        color: inherit;
+        display: none;
+        @media #{$medium-up} { display: inline-block; }
+      }
+    }
+  }
+
+}
+
+// ******
+// *** Footer view modifier
+// ******
+
+.vocabulary-telephone-numbers--footer-view {
+  text-align: center;
+  @media #{$medium-up} {
+    text-align: left;
+  }
+
+  a {
+    display: inline-block;
+    margin: {
+      right: 5px;
+      bottom: 5px;
+      left: 5px;
+    }
+    @media #{$medium-up} {
+      display: block;
+    }
+  }
+
+  .vocabulary-telephone-numbers {
+    line-height: 1;
+
+    .field-name-field-label {
+      color: #F5F5F5;
+      font-size: rem-calc(12);
+      font-weight: 300;
+    }
+    .field-name-field-phone {
+      color: #F5F5F5;
+      font-size: rem-calc(12);
+    }
+  }
+
+}

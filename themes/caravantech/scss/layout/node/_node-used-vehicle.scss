@@ -1,0 +1,210 @@
+// Full View Mode
+.l-node-used-vehicle--full {
+  @include grid-row($behavior:nest);
+  &__additional-vehicle-details,
+  &__features {
+    margin-bottom: 20px;
+    @include grid-column(12);
+  }
+  &__cta,
+  &__dealer-details,
+  &__form,
+  &__finance,
+  &__ivendi-finance-checker,
+  &__similar-vehicles {
+    margin-bottom: 40px;
+    @include grid-column(12);
+  }
+  &__files {
+    margin-bottom: 20px;
+    @include grid-column(12);
+  }
+  &__gallery {
+    @include grid-column(12);
+    @media #{$medium-up} { @include grid-column(8); }
+  }
+  &__header { @include grid-row(); }
+  &__main-specification {
+    @include grid-column(12);
+    @media #{$medium-up} { @include grid-column(4); }
+  }
+  &__price {
+    background-color: $primary-color;
+    margin-bottom: 20px;
+    padding: {
+      top: 20px;
+      bottom: 20px;
+    }
+    text-align: center;
+    -webkit-box-shadow: 0 10px 10px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 0 10px 10px -10px rgba(0,0,0,1);
+    box-shadow: 0 10px 10px -10px rgba(0,0,0,1);
+  }
+  &__saving-price { margin-bottom: 5px; }
+  &__technical {
+    @include grid-column(12);
+    ul {
+      @include block-grid(1);
+      @media #{$large-up} {
+        @include block-grid(3);
+      }
+    }
+  }
+  &__title {
+    @include grid-column(12);
+    @media #{$large-up} { @include grid-column(9); }
+  }
+}
+
+// Search Result & Compare Vehicles View Mode
+.l-node-used-vehicle--compare-vehicle,
+.l-node-used-vehicle--search-result {
+  @include grid-row();
+
+  &__additional {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column(12);
+    }
+  }
+
+  &.l-node-used-vehicle--search-result-multiple-images {
+    .l-node-used-vehicle--compare-vehicle__additional,
+    .l-node-used-vehicle--search-result__additional {
+      display: none;
+
+      // Medium Only
+      @media #{$medium-only} {
+        @include grid-column($columns:12);
+        display: block;
+        margin-top: 10px;
+      }
+
+      // Large Up Only
+      @media #{$large-up} {
+        @include grid-column($columns:7, $float:right);
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__footer {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column(12);
+    }
+  }
+  &__header {
+    @include grid-row();
+    padding: {
+      right: rem-calc(15);
+      left: rem-calc(15);
+    }
+    &--outer {
+      background-color: $primary-color;
+      -webkit-border-top-left-radius: 8px;
+      -webkit-border-top-right-radius: 8px;
+      -moz-border-radius-topleft: 8px;
+      -moz-border-radius-topright: 8px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      margin-bottom: 20px;
+    }
+    &--inner {
+      padding: {
+        top: rem-calc(5);
+        bottom: rem-calc(5);
+      }
+      @include clearfix();
+    }
+  }
+  &__ivendi {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column($columns:12,$collapse:true);
+    }
+  }
+  &__more-info {
+    text-align: right;
+    @include grid-column($columns:6,$collapse:true,$float:right);
+  }
+
+  &__photo {
+    position: relative;
+    @include grid-column(12);
+    @media #{$medium-only} { @include grid-column(7); }
+    @media #{$large-up} { @include grid-column(4); }
+
+    &-sash-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  &__photo-count {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+  }
+
+  &__photo-thumbs {
+    @include grid-column($columns:12, $collapse:true);
+  }
+
+  &__price {
+    @include grid-column(12);
+    @media #{$small-only} { text-align: center; }
+    @media #{$medium-only} {
+      text-align: right;
+      @include grid-column($columns:4,$collapse:true,$float:right);
+    }
+    @media #{$large-up} {
+      text-align: right;
+      @include grid-column($columns:3,$collapse:true,$float:right);
+    }
+  }
+  &__social { @include grid-column($columns:4,$collapse:true); }
+  &__spec {
+    display: none;
+    @media #{$medium-only} {
+      display: block;
+      @include grid-column(5);
+    }
+    @media #{$large-up} {
+      display: block;
+      @include grid-column(8);
+    }
+  }
+  &__title {
+    @include grid-column(12);
+    @media #{$medium-only} { @include grid-column($columns:8,$collapse:true); }
+    @media #{$large-up} { @include grid-column($columns:9,$collapse:true); }
+  }
+  &__youtube { @include grid-column($columns:2,$collapse:true); }
+}
+
+// Featured + Latest Vehicles Sliders
+.l-node-used-vehicle--featured-vehicles {
+  @include clearfix();
+  &__more-info {
+    float: right;
+  }
+}
+.l-node-used-vehicle--latest-vehicles {
+  @include clearfix();
+  &__make-model,
+  &__price {
+    padding: {
+      right: 4px;
+      left: 4px;
+    }
+  }
+  &__more-info {
+    float: right;
+    margin-right: 4px;
+  }
+}

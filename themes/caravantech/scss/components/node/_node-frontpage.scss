@@ -1,0 +1,15 @@
+// Frontpage Bundle
+.node-frontpage {
+
+  // Full View Mode
+  &.view-mode-full {
+    .field-name-title {
+      h1 {
+        font-size: rem-calc(36);
+      }
+    }
+    .field-name-body { margin-bottom: 30px; }
+
+  }
+
+}

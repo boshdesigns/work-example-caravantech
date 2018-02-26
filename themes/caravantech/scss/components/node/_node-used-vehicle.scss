@@ -1,0 +1,509 @@
+// Used Vehicle Bundle
+.node-used-vehicle {
+
+  // Compare & Search Result Vehicles View Mode
+  &.view-mode-compare_vehicle,
+  &.view-mode-search_result {
+    background-color: #fbfbfb;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    border: {
+      color: lighten($secondary-color, 50%);
+      style: solid;
+      width: 1px;
+    }
+    box-shadow: 0 8px 7px -9px #000;
+    .field-name-title {
+      text-align: center;
+      h3 {
+        font-size: rem-calc(16);
+        margin-bottom: 0;
+        @media #{$medium-up} {
+          font-size: $h3-font-size;
+        }
+        a {
+          color: #ffffff;
+        }
+      }
+      @media #{$medium-up} { text-align: left; }
+    }
+    .field-name-field-vehicle-price {
+      color: #ffffff;
+      display: inline-block;
+      font: {
+        size: rem-calc(16);
+        weight: 700;
+      }
+      @media #{$medium-up} {
+        font-size: rem-calc(22);
+      }
+    }
+    .field-name-field-vehicle-plusvat,
+    .field-name-field-vehicle-priceincludevat {
+      color: #ffffff;
+      display: inline-block;
+      margin-left: 3px;
+      font-size: rem-calc(16);
+    }
+    .field-name-field-vehicle-was-price,
+    .field-name-field-vehicle-saving {
+      color: #ffffff;
+      display: inline-block;
+      .label-inline { display: inline-block; }
+      .field-value {
+        display: inline-block;
+        margin-left: 3px;
+        font-weight: bold;
+      }
+    }
+    .field-name-fmg-quoteware-api-payment {
+      color: #ffffff;
+      font: {
+        size: rem-calc(14);
+        weight: 700;
+      }
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+    .field-name-field-field-vehicle-photos { margin-bottom: 15px; }
+    .field-name-photo-count {
+      text-align: center;
+      padding: 4px 8px;
+      background-color: $primary-color;
+      color: #fff;
+      font-size: rem-calc(14);
+    }
+
+
+    .field-name-photo-thumb {
+      width: 100%;
+
+      ul.slick--search-result-thumbnail {
+        list-style: none;
+        width: 100%;
+        display: block;
+
+        .field-name-field-field-vehicle-photos--used-vehicle-search-thumbnail a {
+          width: 25%;
+          display: inline-block;
+
+          &:hover,
+          &:focus {
+            opacity: .8;
+          }
+        }
+      }
+    }
+
+    .field-name-field-label--sash {
+      background-color: #c38e54;
+      color: #ffffff;
+      font-weight: 700;
+      left: -60px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      top: 20px;
+      width: 220px;
+      @include caravantechRotate(-45);
+    }
+
+    .specs-list {
+      border-bottom: {
+        color: lighten($secondary-color, 50%);
+        style: solid;
+        width: 1px;
+      }
+      @include block-grid(1);
+      margin: 0;
+      @media #{$large-up} {
+        @include block-grid(2);
+        margin: 0;
+      }
+      > li {
+        padding: {
+          top: 0;
+          right: 0;
+          bottom: 12px;
+          left: 0;
+        }
+        @media #{$large-up} {
+          padding: {
+            top: 0;
+            right: 0;
+            bottom: 12px;
+            left: 5px;
+          }
+
+          &:nth-of-type(2n+1) {
+            padding-right: 5px;
+            padding-left: 0;
+          }
+        }
+
+        .spec {
+          background-color: $primary-color;
+          padding: 10px;
+        }
+        .label-inline {
+          display: inline-block;
+          color: #ffffff;
+        }
+        .field-value {
+          display: inline-block;
+          font-weight: bold;
+          color: #ffffff;
+          a {
+            color: #ffffff;
+          }
+
+          // If there is a berth icon
+          .berth-icon {
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+    // Styling for the ivendi finance
+    .field-name-ivendi {
+      background-color: $secondary-color;
+      -webkit-box-shadow: inset 0 9px 15px -7px #000;
+      -moz-box-shadow: inset 0 9px 15px -7px #000;
+      box-shadow: inset 0 9px 15px -7px #000;
+      color: #ffffff;
+      font-weight: 700;
+      padding: 15px;
+      margin-bottom: 20px;
+      table {
+        margin-top: 5px;
+        margin-bottom: 0 !important;
+        @media #{$medium-only} {
+          display: inline-table !important;
+        }
+        th {
+          border: {
+            top: 1px solid lighten($secondary-color, 15%) !important;
+            bottom: 1px solid lighten($secondary-color, 15%) !important;
+          }
+          color: #c38e54;
+          font-weight: 700;
+        }
+        td {
+          border-bottom: 1px solid lighten($secondary-color, 15%) !important;
+        }
+      }
+    }
+    .field-name-youtube {
+      margin-top: 15px;
+      .label-inline { display: inline-block; }
+      i {
+        width: 30px;
+        margin-left: 3px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        color: #fff;
+        font-size: rem-calc(16);
+        text-align: center;
+        background-color: map-get($social-icons, youtube);
+      }
+    }
+    .field-name-share {
+      margin-top: 15px;
+      .label-inline { display: inline-block; }
+      .social {
+        display: inline-block;
+        margin-left: 0;
+        li {
+          display: inline-block;
+          margin-right: 3px;
+          i {
+            width: 30px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            color: #fff;
+            font-size: rem-calc(16);
+            text-align: center;
+            background-color: $primary-color;
+            &.fa-facebook { background-color: map-get($social-icons, facebook); }
+            &.fa-twitter { background-color: map-get($social-icons, twitter); }
+            &.fa-google-plus { background-color: map-get($social-icons, google-plus); }
+          }
+        }
+      }
+    }
+    .field-name-save-vehicle-carlist,
+    .field-name-remove-vehicle
+    { display: inline-block; }
+    .field-name-more-information { display: inline-block; }
+  }
+
+  // Full View Mode
+  &.view-mode-full {
+
+    // Add border bottom to h3 on the page
+    h3 {
+      border-bottom: {
+        color: lighten($secondary-color, 50%);
+        style: solid;
+        width: 1px;
+      }
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+
+    .field-name-field-vehicle-price {
+      color: #ffffff;
+      display: inline-block;
+      font: {
+        size: rem-calc(30);
+        weight: 700;
+      }
+      line-height: 1;
+    }
+    .field-name-field-vehicle-plusvat,
+    .field-name-field-vehicle-priceincludevat {
+      color: #ffffff;
+      font-size: rem-calc(16);
+    }
+    .field-name-field-vehicle-was-price,
+    .field-name-field-vehicle-saving {
+      color: #ffffff;
+      display: inline-block;
+      .label-inline { display: inline-block; }
+      .field-value {
+        display: inline-block;
+        margin-left: 3px;
+        font-weight: bold;
+      }
+    }
+    .field-name-fmg-quoteware-api-payment {
+      background-color: lighten($primary-color, 8%);
+      color: #ffffff;
+      font: {
+        size: rem-calc(14);
+        weight: 700;
+      }
+      margin: {
+        top: 5px;
+        bottom: 5px;
+      }
+      padding: {
+        top: 5px;
+        bottom: 5px;
+      }
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background-color: lighten($primary-color, 3%);
+      }
+    }
+
+    // Apply relative to containing gallery div
+    #tab-images {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .field-name-field-label--sash {
+      background-color: #c38e54;
+      color: #ffffff;
+      font-weight: 700;
+      left: -60px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      top: 40px;
+      width: 250px;
+      @include caravantechRotate(-45);
+    }
+
+    .field-name-field-vehicle-photos--thumbs {
+      background-color: darken($secondary-color, 8%);
+      padding: {
+        top: 10px;
+        bottom: 10px;
+      }
+    }
+
+    .field-name-share {
+      text-align: right;
+      .label-inline { display: inline-block; }
+      .social {
+        display: inline-block;
+        margin-left: 0;
+        li {
+          display: inline-block;
+          margin-right: 3px;
+          i {
+            width: 30px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            color: #fff;
+            font-size: rem-calc(16);
+            text-align: center;
+            background-color: $primary-color;
+            &.fa-facebook { background-color: map-get($social-icons, facebook); }
+            &.fa-twitter { background-color: map-get($social-icons, twitter); }
+            &.fa-google-plus { background-color: map-get($social-icons, google-plus); }
+          }
+        }
+      }
+    }
+    .specs-list {
+      border-bottom: {
+        color: lighten($secondary-color, 50%);
+        style: solid;
+        width: 1px;
+      }
+      @include block-grid(1);
+      margin: {
+        top: 0;
+        right: 0;
+        bottom: 20px;
+        left: 0;
+      }
+      padding-bottom: 15px;
+      > li {
+        padding: {
+          top: 0;
+          right: 0;
+          bottom: 5px;
+          left: 0;
+        }
+
+        .spec {
+          background-color: $primary-color;
+          padding: 10px;
+        }
+        .label-inline {
+          display: inline-block;
+          color: #ffffff;
+        }
+        .field-value {
+          display: inline-block;
+          font-weight: bold;
+          color: #ffffff;
+          a {
+            color: #ffffff;
+          }
+
+          // If there is a berth icon
+          .berth-icon {
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+    .field-name-specs-group-one,
+    .field-name-specs-group-two,
+    .field-name-specs-group-three {
+      .specs-list {
+        border: none;
+      }
+    }
+    .files-list {
+      @include block-grid(1);
+      @media #{$medium-only} { @include block-grid(2); }
+      @media #{$large-up} { @include block-grid(4); }
+      li {
+        padding-bottom: 0;
+        a {
+          @include button($full-width:true,$padding:$button-lrg);
+          margin-bottom: 8px;
+        }
+      }
+    }
+    .field-name-vehicle-features {
+      .vehicle-features {
+        @include block-grid(1);
+        @media #{$medium-only} { @include block-grid(2); }
+        @media #{$large-up} { @include block-grid(3); }
+        li { padding-bottom: 12px; }
+      }
+    }
+  }
+
+  // Featured, Latest & Similar Vehicles View Mode
+  &.view-mode-featured_vehicles,
+  &.view-mode-latest_vehicles,
+  &.view-mode-latest_vehicles_homepage,
+  &.view-mode-similar_vehicles {
+    border-bottom: {
+      color: #D3D3D3;
+      style: solid;
+      width: 2px;
+    }
+    padding-bottom: 5px;
+    .field-name-make-model {
+      font-size: rem-calc(13);
+      margin: {
+        top: 10px;
+        bottom: 5px;
+      }
+      a {
+        color: $body-font-color;
+      }
+    }
+    .field-name-field-vehicle-price {
+      color: $body-font-color;
+      display: inline-block;
+      line-height: rem-calc(17);
+      font: {
+        size: rem-calc(13);
+        weight: 700;
+      }
+    }
+    .field-name-field-vehicle-plusvat,
+    .field-name-field-vehicle-priceincludevat {
+      color: $body-font-color;
+      display: inline-block;
+      margin-left: 3px;
+      font-size: rem-calc(12);
+    }
+    .field-name-field-vehicle-was-price,
+    .field-name-field-vehicle-saving {
+      color: $body-font-color;
+      display: inline-block;
+      font-size: rem-calc(12);
+      .label-inline { display: inline-block; }
+      .field-value {
+        display: inline-block;
+        margin-left: 3px;
+        font-weight: bold;
+      }
+    }
+
+    .more-info-button {
+      font: {
+        size: rem-calc(13);
+        weight: 700;
+      }
+    }
+  }
+
+  // Related Vehicles View Mode
+  &.view-mode-related_vehicles {
+    .field-name-manufacturer {
+      color: $primary-color;
+      font-size: rem-calc(18);
+    }
+    .field-name-model {
+      color: $primary-color;
+      color:pink;
+      font-size: rem-calc(18);
+    }
+  }
+
+}

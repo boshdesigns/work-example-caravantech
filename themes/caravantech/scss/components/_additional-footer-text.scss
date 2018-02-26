@@ -1,0 +1,11 @@
+// Styling for Additional Footer Text
+.additional-footer-text {
+  color: #585858;
+  font-size: rem-calc(12);
+  margin-top: 20px;
+  text-align: center;
+  @media #{$medium-up} {
+    text-align: left;
+    width: 60%;
+  }
+}

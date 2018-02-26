@@ -1,0 +1,103 @@
+// New Vehicle Bundle
+.node-new-vehicle {
+
+  // Full View Mode
+  &.view-mode-full {
+    .field-name-title {
+      h2 { margin-bottom: 0; }
+    }
+    .field-name-field-from-price {
+      color: #ffffff;
+      line-height: rem-calc(22);
+      font: {
+        size: rem-calc(20);
+        weight: 700;
+      }
+    }
+    .field-name-field-price--new-vehicle {
+      color: #ffffff;
+      display: inline-block;
+      font: {
+        size: rem-calc(26);
+        weight: 700;
+      }
+      line-height: 1;
+      span { font-size: rem-calc(18); }
+    }
+    .field-name-files {
+      @include block-grid(1);
+      li {
+        padding-bottom: 0;
+        .file {
+          @include button($full-width:true,$padding:$button-lrg);
+          margin-bottom: 8px;
+        }
+      }
+    }
+    .field-name-share {
+      margin-top: 15px;
+      .label-inline { display: inline-block; }
+      .social {
+        display: inline-block;
+        margin-left: 0;
+        li {
+          display: inline-block;
+          margin-right: 3px;
+          i {
+            width: 30px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            color: #fff;
+            font-size: rem-calc(16);
+            text-align: center;
+            background-color: $primary-color;
+            &.fa-facebook { background-color: map-get($social-icons, facebook); }
+            &.fa-twitter { background-color: map-get($social-icons, twitter); }
+            &.fa-google-plus { background-color: map-get($social-icons, google-plus); }
+          }
+        }
+      }
+    }
+    .field-name-field-label--sash {
+      background-color: #c38e54;
+      color: #ffffff;
+      font-weight: 700;
+      left: -60px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      top: 40px;
+      width: 250px;
+      @include caravantechRotate(-45);
+    }
+    .field-name-field-vehicle-photos--thumbs {
+      background-color: darken($secondary-color, 8%);
+      padding: {
+        top: 10px;
+        bottom: 10px;
+      }
+    }
+    .field-name-new-cap-variants {
+      .variants { @include block-grid(1); }
+    }
+  }
+
+  // Teaser View Mode
+  &.view-mode-teaser {
+    .field-name-field-new-veh-images { margin-bottom: rem-calc(5); }
+    .field-name-title {
+      h4 {
+        margin-bottom: 0;
+        line-height: rem-calc(20);
+      }
+    }
+    .field-name-field-from-price {
+      display: inline-block;
+      font-size: rem-calc(10);
+    }
+    .field-name-field-price { display: inline-block; }
+  }
+
+}

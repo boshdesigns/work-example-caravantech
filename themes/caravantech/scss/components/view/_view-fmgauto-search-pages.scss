@@ -1,0 +1,16 @@
+// FMG Search Pages View
+.view-fmgauto-search-pages {
+  .view-header {
+    p {
+      font-weight: 700;
+    }
+  }
+  .view-filters {
+    select {
+      height: 43px;
+    }
+  }
+  &__list {
+    @include block-grid(1);
+  }
+}

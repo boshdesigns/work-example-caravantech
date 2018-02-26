@@ -1,0 +1,106 @@
+// Full View Mode
+.l-node-frontpage--full {
+  &__form,
+  &__promotional-blocks {
+    @include grid-row();
+    &--inner {
+      @include grid-column(12);
+    }
+  }
+  &__featured-vehicles {
+    @include grid-column(12);
+    @media #{$medium-up} {
+      @include grid-column(6);
+    }
+  }
+  &__content {
+    @include grid-row();
+    &--inner {
+      @include grid-column(12);
+      @media #{$medium-up} {
+        @include grid-column(6);
+      }
+    }
+    &--outer {
+      border-top: {
+        color: #D3D3D3;
+        style: solid;
+        width: 2px;
+      }
+      margin-top: 40px;
+      padding-top: 40px;
+    }
+  }
+  &__images {
+    width: 100%;
+    margin-bottom: 15px;
+    @media #{$medium-up} {
+      float: right;
+      width: 320px;
+      margin-left: 15px;
+    }
+  }
+  &__search {
+    @include grid-row();
+    &--inner {
+      @include grid-column(12);
+      @media #{$large-up} {
+        height: 0;
+        @include grid-column(3);
+      }
+      @media (min-width: 1024px) and (max-width: 1320px) {
+        @include grid-column(4);
+      }
+    }
+    &--outer {
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      @media #{$large-up} {
+        height: 0;
+        left: 0;
+        position: absolute;
+        top: 15%;
+        width: 100%;
+      }
+      @media (min-width: 1024px) and (max-width: 1220px) {
+        left: 3%;
+      }
+      @media (min-width: 1024px) and (max-width: 1470px) {
+        top: 5%;
+      }
+    }
+  }
+
+  &__slideshow {
+    margin-bottom: 40px;
+    width: 100%;
+    &--wrap {
+      position: relative;
+    }
+  }
+  &__videos {
+    width: 100%;
+    @media #{$medium-up} {
+      float: right;
+      clear: right;
+      width: 320px;
+      margin-left: 15px;
+    }
+  }
+
+  // Homepage Blocks
+  &__homepage-blocks {
+    @include grid-row();
+
+    &--caravans,
+    &--motorhomes {
+      margin-bottom: 40px;
+      @include grid-column(12);
+      @media #{$medium-up} {
+        @include grid-column(6);
+      }
+    }
+  }
+}

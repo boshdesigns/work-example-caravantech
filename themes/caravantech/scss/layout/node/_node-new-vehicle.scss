@@ -1,0 +1,41 @@
+// Full View Mode
+.l-node-new-vehicle--full {
+  @include grid-row($behavior:nest);
+  &__additional-body,
+  &__body,
+  &__cap,
+  &__cap-equipment,
+  &__cap-jump-menu,
+  &__cap-specs,
+  &__cap-technical,
+  &__cap-options,
+  &__cap-variants,
+  &__form,
+  &__offers,
+  &__slideshow { @include grid-column(12); }
+  &__gallery {
+    @include grid-column(12);
+    @media #{$medium-up} { @include grid-column(8); }
+  }
+  &__main-details {
+    @include grid-column(12);
+    @media #{$medium-up} { @include grid-column(4); }
+  }
+  &__price {
+    background-color: $primary-color;
+    margin-bottom: 20px;
+    padding: {
+      top: 20px;
+      bottom: 20px;
+    }
+    text-align: center;
+    -webkit-box-shadow: 0 10px 10px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 0 10px 10px -10px rgba(0,0,0,1);
+    box-shadow: 0 10px 10px -10px rgba(0,0,0,1);
+  }
+
+  &__photo-sash-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+}

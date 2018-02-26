@@ -1,0 +1,81 @@
+.entityform {
+  position: relative;
+
+  // Style these up just for entityforms
+  select,
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  input[type="color"] {
+    color: #ffffff;
+    background-color: lighten($secondary-color, 25%);
+    border: none;
+    height: 47px;
+  }
+
+  textarea {
+    color: #ffffff;
+    background-color: lighten($secondary-color, 25%);
+    border: none;
+  }
+
+  // Enquiry Form
+  &.entitytype-general_enquiries-form {
+    padding: 20px 20px 0 20px;
+    background-color: $secondary-color;
+    label { color: #fff; }
+    .entityform-row {
+      @include grid-row($behavior:nest);
+      .field-name-field-ef-name,
+      .field-name-field-email,
+      .field-name-field-phone {
+        @include grid-column(12);
+        @media #{$medium-up} { @include grid-column(4); }
+      }
+      .field-name-field-branch,
+      .field-name-field-body { @include grid-column(12); }
+    }
+  }
+
+  // Vehicle Enquiry Form
+  &.entitytype-vehicle_enquiry_form-form {
+    padding: 20px 20px 0 20px;
+    background-color: $secondary-color;
+    label { color: #fff; }
+    .entityform-row {
+      @include grid-row($behavior:nest);
+      .field-name-field-ef-name,
+      .field-name-field-email,
+      .field-name-field-phone {
+        @include grid-column(12);
+        @media #{$medium-up} { @include grid-column(4); }
+      }
+      .field-name-field-branch,
+      .field-name-field-body { @include grid-column(12); }
+    }
+  }
+
+  // Vehicle Valuation
+  &.entitytype-fmg_vehicle_valuation-form,
+  &.entitytype-fmg_caravan_motorhome_valuation-form,
+  &.entitytype-fmg_service_quotation-form {
+    fieldset {
+      background-color: $secondary-color;
+      border: none;
+    }
+    label,
+    .fieldset-description,
+    .has-tip { color: #fff; }
+  }
+
+}

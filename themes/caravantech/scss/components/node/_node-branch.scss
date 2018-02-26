@@ -1,0 +1,76 @@
+// Branch Bundle
+.node-branch {
+  .field-name-get-directions {
+    .directions {
+      &__inner { @include grid-row($behavior:nest); }
+      &__label {
+        @include grid-column(12);
+        margin-bottom: 5px;
+      }
+      &__location {
+        margin-bottom: 0;
+        @include grid-column(12);
+        @media #{$medium-up} { @include grid-column(8); }
+      }
+      &__transport {
+        margin-bottom: 0;
+        @include grid-column(12);
+        @media #{$medium-up} { @include grid-column(4); }
+      }
+      &__submit {
+        @include grid-column(12);
+        button { @include button($padding:rem-calc(10)); }
+      }
+    }
+  }
+
+  // Contact Page View Mode
+  &.view-mode-contact_page {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    .field-name-field-address { margin-bottom: 20px; }
+  }
+
+  // Footer View Mode
+  &.view-mode-footer {
+    color: #D3D3D3;
+    font-size: rem-calc(12);
+    text-align: center;
+    @media #{$medium-up} {
+      text-align: left;
+    }
+    .heading {
+      color: #D3D3D3;
+      font: {
+        size: rem-calc(12);
+        weight: 700;
+      }
+      margin-bottom: 3px;
+    }
+    .field-name-title {
+      margin-right: 1px;
+      &::after { content: ','; }
+    }
+    .field-name-field-address,
+    .field-name-field-branch-reg-office-address {
+      div { display: inline-table; }
+      .thoroughfare,
+      .premise,
+      .locality,
+      .state {
+        margin-right: 5px;
+        &::after { content: ','; }
+      }
+      .country {
+        display: none;
+      }
+    }
+  }
+
+  // Vehicle Branch View Mode
+  &.view-mode-vehicle_branch {
+    .field-name-field-address,
+    .field-name-departments { margin-bottom: 10px; }
+  }
+
+}

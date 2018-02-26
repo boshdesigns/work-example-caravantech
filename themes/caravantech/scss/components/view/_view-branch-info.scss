@@ -1,0 +1,11 @@
+// Branch Info View
+.view-branch-info {
+
+  // Footer Addresses Display
+  &.view-display-id-footer_branch {
+    float: left;
+    width: 45%;
+    .view-branch-info__list { @include block-grid(1); }
+  }
+
+}

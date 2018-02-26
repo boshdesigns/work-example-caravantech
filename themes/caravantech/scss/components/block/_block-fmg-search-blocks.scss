@@ -1,0 +1,252 @@
+.block-fmg-search-blocks {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: $secondary-color;
+
+  .new-search-block-title,
+  .used-search-block-title {
+    float: left;
+
+    @media #{$medium-only} { float: none; }
+    h2 {
+      margin-bottom: 0;
+      color: #fff;
+      font: {
+        size: rem-calc(16);
+        weight: 400;
+      }
+    }
+  }
+
+  #facet_ftm_field_vehicle_price,
+  #facet_ftm_fmg_quoteware_api_payment {
+    @include grid-row($behavior: nest);
+    .form-item {
+      @include grid-column(6);
+      margin-bottom: 0;
+      @media #{$medium-only} { @include grid-column(12); }
+      @media #{$large-up} {
+        &.form-item-min { padding-right: 5px; }
+        &.form-item-max { padding-left: 5px; }
+      }
+    }
+  }
+
+  // Select styling
+  select {
+    background-color: transparent;
+    border: none;
+    border-bottom: {
+      color: #D3D3D3;
+      style: solid;
+      width: 2px;
+    }
+    color: #ffffff;
+    padding: {
+      top: 0;
+      right: 0;
+      bottom: 5px;
+      left: 0;
+    }
+    font-size: rem-calc(13);
+  }
+
+  .button {
+    @include button($padding:$button-sml,$full-width:true);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  &.block-fmg-search-blocks-fmg-used-vehicle-search-block {
+    .used-search-block-count {
+      margin-bottom: 15px;
+      color: #fff;
+      font-size: rem-calc(16);
+      font-weight: 400;
+      text-align: right;
+      @media #{$medium-only} { text-align: left; }
+    }
+
+    // Price / Monthly Price Radios
+    #fmg-solr-toggle-form {
+      @include grid-row($behavior: nest);
+      clear: both;
+      margin-top: -10px;
+      margin-bottom: 10px;
+
+      .form-radios {
+        @include clearfix;
+        margin-top: 10px;
+      }
+
+      &__total,
+      &__ivendi {
+        .form-item {
+          float: left;
+          margin: 0 5px 0 0;
+          width: 100%;
+          height: 26px;
+          position: relative;
+        }
+
+        label, input {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+
+        input[type="radio"] {
+          display: none;
+        }
+
+        input[type="radio"]:checked + label {
+          &::before {
+            background-color: $primary-color;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            content: "";
+            height: 13px;
+            left: 3px;
+            position: absolute;
+            top: 5px;
+            width: 13px;
+            z-index: 2;
+          }
+        }
+
+        label {
+          color: #ffffff;
+          font-weight: bold;
+          padding: {
+            left: 25px;
+          }
+          &:after {
+            background-color: #ffffff;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            content: "";
+            height: 19px;
+            left: 0;
+            position: absolute;
+            top: 2px;
+            width: 19px;
+            z-index: 1;
+          }
+        }
+      }
+
+
+      &__total {
+        @include grid-column(5);
+        margin-bottom: 0;
+        padding-right: 0;
+        .form-item { margin-top: 0; }
+        @media #{$medium-only} {
+          @include grid-column(12);
+        }
+      }
+      &__ivendi {
+        @include grid-column(7);
+        margin-bottom: 0;
+        padding-left: 0;
+        .form-item { margin-top: 0; }
+        @media #{$medium-only} {
+          @include grid-column(12);
+        }
+      }
+      .form-radio {
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+      .option {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    // Range input
+    .fmg_facetapi_range {
+      @include grid-row($behavior: nest);
+
+      fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+
+        legend {
+          @include grid-column(12);
+          background-color: transparent;
+          font-size: rem-calc(14px);
+          font-weight: normal;
+          margin: 0;
+          color: #fff;
+          padding-bottom: 0;
+        }
+      }
+
+      .form-type-select {
+        @include grid-column(6);
+        margin-bottom: 0;
+
+        // Medium Up Only
+        @media #{$medium-up} {
+          @include grid-column(12);
+        }
+      }
+
+      .form-submit {
+        display: none;
+      }
+    }
+
+    // fmg_keyword_search
+    .fmg_keyword_search {
+      margin-top: 0;
+
+      fieldset {
+        padding: 2px 0 10px;
+        margin: 0;
+        border: 0;
+
+        legend {
+          color: #fff;
+          background-color: transparent;
+          font-size: rem-calc(12px);
+          font-weight: normal;
+          padding-left: ($column-gutter / 4);
+          padding-right: ($column-gutter / 4);
+        }
+      }
+    }
+
+    #toggle-options {
+      display: none;
+    }
+  }
+}
+
+.front .block-fmg-search-blocks {
+  background-color: rgba($secondary-color, 0.9);
+  @media (min-width: 1024px) and (max-width: 1320px) {
+    #fmg-facetapi-select-facet-form-im-field-vehicle-model {
+      float: left;
+      margin-left: 1%;
+      width: 49%;
+    }
+
+    #fmg_manufacturer_select {
+      float: left;
+      margin-right: 1%;
+      width: 49%;
+    }
+  }
+}

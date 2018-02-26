@@ -1,0 +1,82 @@
+// Additional Vehicle CTA Component styling
+.additional-vehicle-cta {
+  text-align: center;
+  width: 100%;
+
+  @media #{$medium-up} {
+    width: 50%;
+    float: left;
+  }
+  a {
+    background: darken($secondary-color, 3%);
+    background-image: url("../images/classy-fabric.png");
+    border-top: {
+      color: #3A3A40;
+      style: solid;
+      width: 1px;
+    }
+    color: #ffffff;
+    display: block;
+    padding: {
+      top: 10px;
+      bottom: 10px;
+    }
+    font: {
+      size: rem-calc(16);
+      weight: 700;
+    }
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+    i {
+      opacity: 0;
+      margin-left: -5px;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+    span {
+      position: relative;
+      &:after {
+        content: '';
+        background-color: #ffffff;
+        bottom: -3px;
+        height: 1px;
+        left: calc(50% - 25px);
+        opacity: 1;
+        position: absolute;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        width: 50px;
+      }
+    }
+
+    &:hover {
+      span::after {
+        left: calc(70% - 25px);
+        opacity: 0;
+      }
+      i {
+        opacity: 1;
+        margin-left: 5px;
+      }
+    }
+
+  }
+
+  &__enquiry {
+    a {
+      border-left: {
+        color: #3A3A40;
+        style: solid;
+        width: 1px;
+      }
+    }
+  }
+
+}

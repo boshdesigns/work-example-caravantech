@@ -1,0 +1,167 @@
+<?php
+/**
+ * @file
+ * Code for the Caravan Tech Site Config feature.
+ */
+
+include_once 'caravan_tech_site_config.features.inc';
+
+
+function caravan_tech_site_config_block_info() {
+
+  $blocks = array();
+
+  $blocks['caravan_tech_footer_text'] = array(
+    'info' => t('Caravan Tech - Additional Footer text'),
+    'cache' => DRUPAL_CACHE_GLOBAL
+  );
+
+  $blocks['caravan_tech_caravans_block'] = array(
+    'info' => t('Caravan Tech - Homepage Caravans Block'),
+    'cache' => DRUPAL_CACHE_GLOBAL
+  );
+
+  $blocks['caravan_tech_motorhomes_block'] = array(
+    'info' => t('Caravan Tech - Homepage Motorhomes Block'),
+    'cache' => DRUPAL_CACHE_GLOBAL
+  );
+
+  return $blocks;
+
+}
+
+function caravan_tech_site_config_block_view($delta = '') {
+
+  $block = array();
+
+  switch ($delta) {
+    case 'caravan_tech_footer_text':
+      $block['subject'] = '';
+      $block['content'] = array(
+        '#markup' => '
+        © Copyright 2013 - 2018 Caravan Tech (Sales) Ltd <br /><br /> Registered in England and Wales Number 03412547. All rights reserved. All photographs are for illustrative purposes only and may not depict the actual vehicle. Specifications, mileage and prices are subject to change, please contact us to confirm before travelling or a purchase is agreed.
+        ',
+      );
+
+      break;
+
+    case 'caravan_tech_caravans_block':
+      $block['subject'] = '';
+      $block['content'] = array(
+        '#markup' => '
+          <section class="homepage-block--caravans">
+            <figure class="homepage-block--caravans__img">
+              <img src="' . drupal_get_path('theme', 'caravantech') . '/images/caravans.jpg" />
+
+              <div class="homepage-block--caravans__content">
+                <h2 class="homepage-block--caravans__title">Caravans</h2>
+                <a href="new/caravans" class="homepage-block--caravans__link">New</a>
+                <a href="used/caravans" class="homepage-block--caravans__link">Used</a>
+              </div>
+            </figure>
+
+            <ul class="homepage-block--caravans__cta__list">
+
+              <li class="homepage-block--caravans__cta first">
+                <a href="caravan-service" class="homepage-block--caravans__cta__link">
+                  <figure class="homepage-block--caravans__cta__image">
+                    <img src="' . drupal_get_path('theme', 'caravantech') . '/images/caravan-services.png" />
+                  </figure>
+                  <h3 class="homepage-block--caravans__cta__title">Caravan Service</h3>
+                </a>
+              </li>
+
+              <li class="homepage-block--caravans__cta">
+                <a href="new/caravans/bailey" class="homepage-block--caravans__cta__link">
+                  <figure class="homepage-block--caravans__cta__image">
+                    <img src="' . drupal_get_path('theme', 'caravantech') . '/images/bailey-caravans.png" />
+                  </figure>
+                  <h3 class="homepage-block--caravans__cta__title">Bailey Caravans</h3>
+                </a>
+              </li>
+
+              <li class="homepage-block--caravans__cta last">
+                <a href="new/caravans/swift" class="homepage-block--caravans__cta__link">
+                  <figure class="homepage-block--caravans__cta__image">
+                    <img src="' . drupal_get_path('theme', 'caravantech') . '/images/swift.png" />
+                  </figure>
+                  <h3 class="homepage-block--caravans__cta__title">Swift Caravans</h3>
+                </a>
+              </li>
+
+            </ul>
+          </section>
+        ',
+      );
+
+      break;
+
+    case 'caravan_tech_motorhomes_block':
+      $block['subject'] = '';
+      $block['content'] = array(
+        '#markup' => '
+          <section class="homepage-block--motorhomes">
+            <figure class="homepage-block--motorhomes__img">
+              <img src="' . drupal_get_path('theme', 'caravantech') . '/images/motorhomes.jpg" />
+
+              <div class="homepage-block--motorhomes__content">
+                <h2 class="homepage-block--motorhomes__title">Motorhomes</h2>
+                <a href="new/motorhomes" class="homepage-block--motorhomes__link">New</a>
+                <a href="used/motorhomes" class="homepage-block--motorhomes__link">Used</a>
+              </div>
+            </figure>
+
+            <ul class="homepage-block--motorhomes__cta__list">
+
+              <li class="homepage-block--motorhomes__cta first">
+                <a href="caravan-service" class="homepage-block--motorhomes__cta__link">
+                  <figure class="homepage-block--motorhomes__cta__image">
+                    <img src="' . drupal_get_path('theme', 'caravantech') . '/images/motorhome-services.png" />
+                  </figure>
+                  <h3 class="homepage-block--motorhomes__cta__title">Motorhome Service</h3>
+                </a>
+              </li>
+
+              <li class="homepage-block--motorhomes__cta last">
+                <a href="new/motorhomes/bailey" class="homepage-block--motorhomes__cta__link">
+                  <figure class="homepage-block--motorhomes__cta__image">
+                    <img src="' . drupal_get_path('theme', 'caravantech') . '/images/bailey-motorhomes.png" />
+                  </figure>
+                  <h3 class="homepage-block--motorhomes__cta__title">Bailey Motorhomes</h3>
+                </a>
+              </li>
+
+            </ul>
+          </section>
+        ',
+      );
+
+      break;
+  }
+
+  return $block;
+
+}
+
+function caravan_tech_site_config_preprocess_page(&$vars) {
+
+  // set up additional footer text variable to print on page.tpl
+  $vars['additional_footer_text'] = module_invoke('caravan_tech_site_config', 'block_view', 'caravan_tech_footer_text');
+
+
+  // Implement Simple image load masking
+  drupal_add_js('var imgs = document.querySelectorAll(\'.slick picture img\');for (var i = 0; i < imgs.length; i++) {imgs[i].className += \'lazy-load\';}', array('scope' => 'footer', 'type' => 'inline', 'weight' => 0));
+  drupal_add_js("https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js", array('scope' => 'header', 'type' => 'external', 'weight' => -1));
+  drupal_add_js(drupal_get_path('module', 'caravan_tech_site_config') . '/js/image-lazy-load.js', array('scope' => 'footer', 'weight' => 1, 'preprocess' => FALSE));
+
+
+}
+
+function caravan_tech_site_config_preprocess_node(&$vars) {
+
+  if ($vars['type'] == 'frontpage') {
+    $vars['caravans_block'] = module_invoke('caravan_tech_site_config', 'block_view', 'caravan_tech_caravans_block');
+    $vars['motorhomes_block'] = module_invoke('caravan_tech_site_config', 'block_view', 'caravan_tech_motorhomes_block');
+  }
+
+}

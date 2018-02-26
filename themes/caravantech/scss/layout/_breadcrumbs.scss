@@ -1,0 +1,31 @@
+.l-breadcrumbs {
+  @include grid-row();
+  &__list {
+    @include grid-column(12);
+    @media #{$medium-up} {
+      @include grid-column(6);
+    }
+
+    .breadcrumbs {
+      margin: 0;
+      li a {
+        font-weight: 700;
+      }
+    }
+  }
+  &__title {
+    display: none;
+    @media #{$medium-up} {
+      display: block;
+      @include grid-column(6);
+    }
+  }
+
+  &__outer {
+    background-image: url(../images/breadcrumb-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}

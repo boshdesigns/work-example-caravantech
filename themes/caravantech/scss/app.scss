@@ -1,0 +1,261 @@
+/* @file
+ * This file is a custom file that loads all files. Each non-base layer
+ * can be disabled.
+ *
+ * Do not name this file "STARTER.scss". This file should be named
+ * caravantech.scss. If you used the drush command to generate this subtheme,
+ * it should be named for you.
+ *
+ * This application file (caravantech.scss) is where all the partials are
+ * imported.
+ *
+ * Theme styles are categorized using SMACSS standards. They utilize
+ * categorization of styles into various categories. Those categories are the
+ * following:
+ *
+ * - Base: CSS reset/normalize plus HTML element styling.
+ * - Layout: Macro arrangement of a web page, including any grid systems.
+ * - Modules: Dictate minor layout modules or reusable elements.
+ * - States: Describe the appearance of a module in various states.
+ * - Theme: Specific customizations for your subtheme.
+ * For more information about this new Drupal css file standard, please review
+ * the following:
+ * - https://drupal.org/node/1887922
+ * - http://smacss.com/
+ */
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Zurb Foundation
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Core
+// The following imports bootstrap the theme.
+// You may comment out bourbon if you don't want to use its library of mixins.
+// The theme will have compilation errors if Foundation is not imported.
+
+// Global Zurb Foundation variable overrides.
+@import "base/init";
+
+// Comment out the imports you don't need below.
+@import "../../../../all/themes/zurb_foundation/scss/foundation/components/grid";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/accordion";
+@import "../../../../all/themes/zurb_foundation/scss/foundation/components/alert-boxes";
+@import "../../../../all/themes/zurb_foundation/scss/foundation/components/block-grid";
+@import "../../../../all/themes/zurb_foundation/scss/foundation/components/breadcrumbs";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/button-groups";
+@import "../../../../all/themes/zurb_foundation/scss/foundation/components/buttons";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/clearing";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/dropdown";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/dropdown-buttons";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/flex-video";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/forms";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/icon-bar";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/inline-lists";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/joyride";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/keystrokes";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/labels";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/magellan";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/orbit";
+@import "../../../../all/themes/zurb_foundation/scss/foundation/components/pagination";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/panels";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/pricing-tables";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/progress-bars";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/range-slider";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/reveal";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/side-nav";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/split-buttons";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/sub-nav";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/switches";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/tables";
+@import "../../../../all/themes/zurb_foundation/scss/foundation/components/tabs";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/thumbs";
+@import "../../../../all/themes/zurb_foundation/scss/foundation/components/tooltips";
+@import "../../../../all/themes/zurb_foundation/scss/foundation/components/top-bar";
+@import "../../../../all/themes/zurb_foundation/scss/foundation/components/type";
+// @import "../../../../all/themes/zurb_foundation/scss/foundation/components/offcanvas";
+@import "../../../../all/themes/zurb_foundation/scss/foundation/components/visibility";
+
+// Mixin Libraries
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Comment out this import if you don't want to use Bourbon, a replacement for Compass mixins (Optional).
+// @import "bourbon";
+
+// Shared base theme mixins.
+@import "../../../../all/themes/fmgautobase/scss/base/mixins";
+
+// Base
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Import our mixins early so they can be used by other partials (Optional).
+@import "base/mixins";
+
+// Common file is where you place common utility classes to extend or parametrics (Optional).
+// @import "base/common";
+
+// Import Google Fonts.
+@import "base/google-fonts";
+
+// Styling for elements (Optional).
+@import "base/elements";
+
+// Layout
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Default set of layouts referenced from the express theme (Optional).
+//@import "../../../../all/themes/fmgautoexpress/scss/layout/bean/bean-basic-block";
+@import "../../../../all/themes/fmgautoexpress/scss/layout/bean/bean-call-to-action-used-vehicle";
+@import "../../../../all/themes/fmgautoexpress/scss/layout/bean/bean-promotional-block";
+// @import "../../../../all/themes/fmgautoexpress/scss/layout/node/node-branch";
+@import "../../../../all/themes/fmgautoexpress/scss/layout/node/node-department";
+// @import "../../../../all/themes/fmgautoexpress/scss/layout/node/node-frontpage";
+// @import "../../../../all/themes/fmgautoexpress/scss/layout/node/node-page";
+// @import "../../../../all/themes/fmgautoexpress/scss/layout/node/node-used-vehicle";
+@import "../../../../all/themes/fmgautoexpress/scss/layout/node/node-used-vehicle-list-content";
+@import "../../../../all/themes/fmgautoexpress/scss/layout/taxonomy/vocabulary-opening-hours";
+@import "../../../../all/themes/fmgautoexpress/scss/layout/taxonomy/vocabulary-telephone-numbers";
+// @import "../../../../all/themes/fmgautoexpress/scss/layout/breadcrumbs";
+// @import "../../../../all/themes/fmgautoexpress/scss/layout/footer";
+// @import "../../../../all/themes/fmgautoexpress/scss/layout/header";
+// @import "../../../../all/themes/fmgautoexpress/scss/layout/main";
+
+// New Vehicle Layout (Optional).
+@import "../../../../all/themes/fmgautoexpress/scss/layout/bean/bean-call-to-action-new-vehicle";
+// @import "../../../../all/themes/fmgautoexpress/scss/layout/node/node-new-vehicle-cap";
+// @import "../../../../all/themes/fmgautoexpress/scss/layout/node/node-new-vehicle";
+@import "../../../../all/themes/fmgautoexpress/scss/layout/node/node-new-vehicle-list-content";
+// @import "../../../../all/themes/fmgautoexpress/scss/layout/node/node-offers";
+
+// Theme Specific Layout.
+@import "layout/header";
+@import "layout/main";
+@import "layout/footer";
+@import "layout/breadcrumbs";
+
+
+// Bean
+
+// Node
+@import "layout/node/node-used-vehicle";
+@import "layout/node/node-frontpage";
+@import "layout/node/node-branch";
+@import "layout/node/node-page";
+@import "layout/node/node-new-vehicle";
+
+
+// Taxonomy
+
+
+// Custom Theme Specific Layourt.
+@import "layout/additional-vehicle-cta";
+
+// Bean
+
+// Node
+
+// Taxonomy
+
+
+
+// Components
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Default set of components referenced from the express theme (Optional).
+//@import "../../../../all/themes/fmgautoexpress/scss/components/bean/bean-basic-block";
+@import "../../../../all/themes/fmgautoexpress/scss/components/bean/bean-call-to-action-used-vehicle";
+@import "../../../../all/themes/fmgautoexpress/scss/components/bean/bean-promotional-block";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/block/block-fmg-search-blocks";
+@import "../../../../all/themes/fmgautoexpress/scss/components/block/block-fmgauto-compare-vehicles";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/block/block-fmgauto-generic-site-settings";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/block/block-menu";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/node/node-branch";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/node/node-frontpage";
+@import "../../../../all/themes/fmgautoexpress/scss/components/node/node-page";
+@import "../../../../all/themes/fmgautoexpress/scss/components/node/node-slideshow-images";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/node/node-used-vehicle";
+@import "../../../../all/themes/fmgautoexpress/scss/components/node/node-used-vehicle-list-content";
+@import "../../../../all/themes/fmgautoexpress/scss/components/solr/apachesolr-search-results";
+@import "../../../../all/themes/fmgautoexpress/scss/components/taxonomy/vocabulary-opening-hours";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/taxonomy/vocabulary-social-media";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/taxonomy/vocabulary-telephone-numbers";
+@import "../../../../all/themes/fmgautoexpress/scss/components/view/view-block-images";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/view/view-branch-info";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/view/view-call-to-actions-used-vehicles";
+@import "../../../../all/themes/fmgautoexpress/scss/components/view/view-compare-vehicles";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/view/view-fmgauto-search-pages";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/view/view-header-telephone-numbers";
+//@import "../../../../all/themes/fmgautoexpress/scss/components/view/view-basic-blocks";
+@import "../../../../all/themes/fmgautoexpress/scss/components/view/view-promotional-blocks";
+@import "../../../../all/themes/fmgautoexpress/scss/components/view/view-related-vehicles";
+@import "../../../../all/themes/fmgautoexpress/scss/components/view/view-similar-vehicles";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/view/view-social-media";
+@import "../../../../all/themes/fmgautoexpress/scss/components/view/view-vehicle-makes";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/entityform";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/slick";
+@import "../../../../all/themes/fmgautoexpress/scss/components/tabs";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/topbar";
+
+// New Vehicle Components (Optional).
+@import "../../../../all/themes/fmgautoexpress/scss/components/bean/bean-call-to-action-new-vehicle";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/node/node-new-vehicle";
+@import "../../../../all/themes/fmgautoexpress/scss/components/node/node-new-vehicle-list-content";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/view/view-call-to-actions-new-vehicles";
+@import "../../../../all/themes/fmgautoexpress/scss/components/view/view-new-vehicles";
+@import "../../../../all/themes/fmgautoexpress/scss/components/view/view-new-vehicle-list-content";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/node/node-offers";
+// @import "../../../../all/themes/fmgautoexpress/scss/components/view/view-offers";
+
+
+
+// Theme Specific Components.
+@import "components/topbar";
+@import "components/slick";
+@import "components/button";
+@import "components/entityform";
+
+
+// Bean
+
+// Block
+@import "components/block/block-menu";
+@import "components/block/block-fmgauto-generic-site-settings";
+@import "components/block/block-fmg-search-blocks";
+
+// Node
+@import "components/node/node-branch";
+@import "components/node/node-used-vehicle";
+@import "components/node/node-frontpage";
+@import "components/node/node-new-vehicle";
+
+// Taxonomy
+@import "components/taxonomy/vocabulary-telephone-numbers";
+@import "components/taxonomy/vocabulary-social-media";
+
+// View
+@import "components/view/view-social-media";
+@import "components/view/view-branch-info";
+@import "components/view/view-fmgauto-search-pages";
+@import "components/view/view-header-telephone-numbers";
+@import "components/view/view-call-to-actions-used-vehicles";
+@import "components/view/view-call-to-actions-new-vehicles";
+
+
+// Custom Theme Specific Components
+@import "components/opening-hours";
+@import "components/additional-footer-text";
+@import "components/fmgauto-finance-plugins";
+@import "components/additional-vehicle-cta";
+@import "components/homepage-block";
+
+// Bean
+
+// Block
+
+// Node
+
+// Taxonomy
+
+// View
+@import "components/view/view-featured-vehicles";

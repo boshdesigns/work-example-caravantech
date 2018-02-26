@@ -1,0 +1,14 @@
+// Footer Message
+.block-fmgauto-generic-site-settings {
+  &-fmg-dealer-footer-message {
+    color: #585858;
+    text-align: center;
+    @media #{$medium-up} {
+      text-align: left;
+    }
+    a { color: #585858; }
+    p {
+      font-size: rem-calc(12);
+    }
+  }
+}

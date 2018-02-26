@@ -1,0 +1,126 @@
+.l-footer {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  background-color: $secondary-color;
+
+  &__first {
+    @include grid-column(12);
+    margin-bottom: 20px;
+    text-align: center;
+    @media #{$medium-only} {
+      @include grid-column(6);
+    }
+    @media #{$medium-up} {
+      text-align: left;
+    }
+    @media #{$large-up} {
+      @include grid-column(2);
+    }
+  }
+  &__second {
+    @include grid-column(12);
+    margin-bottom: 20px;
+    text-align: center;
+    @media #{$medium-only} {
+      @include grid-column(6);
+      clear: left;
+    }
+    @media #{$medium-up} {
+      text-align: left;
+    }
+    @media #{$large-up} {
+      @include grid-column(4);
+    }
+  }
+  &__third {
+    @include grid-column(12);
+    margin-bottom: 20px;
+    @media #{$medium-only} {
+      @include grid-column(6);
+    }
+    @media #{$large-up} {
+      @include grid-column(3);
+      padding-left: 0;
+    }
+  }
+  &__fourth {
+    @include grid-column(12);
+    &--outer {
+      border-top: {
+        color: #585858;
+        style: solid;
+        width: 2px;
+      }
+      margin-top: 40px;
+      padding-top: 40px;
+    }
+  }
+
+  &__second,
+  &__logos {
+    @media #{$medium-up} {
+      position: relative;
+      &:before {
+        background-color: #585858;
+        content: '';
+        height: 85px;
+        position: absolute;
+        right: 0;
+        top: -5px;
+        width: 2px;
+      }
+    }
+  }
+
+  &__second {
+    @media #{$large-up} {
+      &:before {
+        right: 12px;
+      }
+    }
+  }
+
+  &__logos {
+    @media #{$large-up} {
+      &:before {
+        right: 0;
+      }
+    }
+  }
+
+  &__first {
+    @media #{$large-up} {
+      position: relative;
+      &:before {
+        background-color: #585858;
+        content: '';
+        height: 85px;
+        position: absolute;
+        right: 12px;
+        top: -5px;
+        width: 2px;
+      }
+    }
+  }
+
+  &__inner { @include grid-row(); }
+
+  &__logos {
+    @include grid-column(12);
+    margin-bottom: 20px;
+    text-align: center;
+    @media #{$medium-only} {
+      @include grid-column(6);
+    }
+    @media #{$medium-up} {
+      text-align: left;
+    }
+    @media #{$large-up} {
+      @include grid-column(3);
+    }
+    img {
+      margin-right: 5px;
+    }
+  }
+}
